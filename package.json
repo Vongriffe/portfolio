@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "first portfolio",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vongriffe/portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Von Griffe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vongriffe/portfolio/issues"
+  },
+  "homepage": "https://github.com/Vongriffe/portfolio#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0"
+  }
+}
