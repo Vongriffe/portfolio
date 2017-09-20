@@ -2,11 +2,17 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
+var watch = require('gulp-watch');
+var jslint = require('gulp-jslint'); // nie dodany do skryptu (zaintalowany)
+var plumber = require('gulp-plumber'); // nie dodany do skryptu (zaintalowany)
+
+
+
 var Files = {
     html: './index.html',
     css_dest: './css',
     scss_all: './sass/**/*.scss',
-    scss_main: './sass/style.scss'
+    scss_main: './sass/*.scss'
 }
 
 gulp.task('sass', function(){
