@@ -6,5 +6,13 @@ $grid-row: 1;
 
 
 // breakpoints
+
+
 $breakpoint-small: "only screen and (min-width: 20em)";
 $breakpoint-medium: "only screen and (min-width: 30em)";
+
+// breakpoints
+
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+$iphone6: "only screen and (min-width: 375px) and (max-width: 667px)";

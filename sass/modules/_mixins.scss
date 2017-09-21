@@ -1,5 +1,65 @@
-// @mixin basis($width) {
-// flex: 0 0 calc(#{$width} - 20px);
+@mixin flex {
+  display: -webkit-box;
+  display: flex;
+}
+
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+// Media Queries - Tablet
+
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+
+// Media Queries - Iphone
+
+@mixin iPhone6 {
+  @media #{$iphone6}{
+    @content;
+  }
+}
+
+
+@mixin clearfix {
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// przykład użycia clearfix
+// .too-much-fog {
+//     @extend %clearfix;
 // }
 
 
@@ -15,31 +75,5 @@
         &:active, &:focus {
             color: $active;
         }
-    }
-}
-
-
-@mixin flex {
-  display: -webkit-box;
-  display: flex;
-}
-
-@mixin border-box {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-%clearfix {
-    *zoom: 1;
-
-    &:after,
-    &:before {
-        content: " ";
-        display: table;
-    }
-
-    &:after {
-        clear: both;
     }
 }

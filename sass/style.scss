@@ -2,22 +2,6 @@
 @import "modules/variables";
 @import "modules/mixins";
 
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
-  position: $position;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-}
-@mixin clearfix {
-  &:after,
-  &:before {
-    content: "";
-    display: block;
-    clear: both;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -32,41 +16,11 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-/* ======
-NAVBAR
-====== */
-//
-// .section_home {
-//   @include clearfix ;
-//   .container {
-//     .sidebar {
-//       nav  {
-//         .menu {
-//           li {
-//             vertical-align: middle;
-//             display: table-cell;
-//             a {
-//               font-size: 0.75rem;
-//               color: $color-white;
-//               text-decoration: none;
-//               text-transform: uppercase;
-//               letter-spacing: 0.2rem;
-//               padding: 1rem;
-//               display:block
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-//
+/* ===========================
+    SECTION HOME - RIGHT PART
+   =========================== */
 
-/* ======
-PROJECTS
-====== */
-
-.projects {
+.projects_page {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
@@ -90,16 +44,16 @@ PROJECTS
         text-transform: uppercase;
         padding: 1rem;
 
-
         @media (max-width: 720px) {
           font-size: 3rem;
-          text-align: right;
+          // text-align: right;
           margin-right:1rem;
         }
-        @media (max-width: 320px) {
-          font-size: 2rem;
+        @media (max-width: 420px) {
+          // font-size: 2rem;
+          margin-left: 1rem;
           margin-right:1rem;
-          text-align: right;
+          // text-align: right;
         }
       }
     }
@@ -113,58 +67,21 @@ PROJECTS
       @media (max-width: 420px) {
         font-size: 0.75rem;
         text-align: left;
-        padding: 2rem;
+        // padding: 1rem;
       }
       @media all and (max-width: 720px) {
         display: flex;
         ul {
-          padding: 4rem;
+          padding: 2rem;
         }
       }
     }
-    //scroll
-    // .scroll-downs {
-    //   display: flex;
-    //   margin: auto;
-    //   margin-top: 5rem;
-    //   width :10px;
-    //   height: 55px;
-    //
-    //   .mousey {
-    //     width: 3px;
-    //     padding: 10px 15px;
-    //     height: 35px;
-    //     border: 2px solid #fff;
-    //     border-radius: 25px;
-    //     opacity: 0.75;
-    //     box-sizing: content-box;
-    //
-    //     .scroller {
-    //       width: 3px;
-    //       height: 10px;
-    //       border-radius: 25%;
-    //       background-color: #fff;
-    //       animation-name: scroll;
-    //       animation-duration: 2.2s;
-    //       animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-    //       animation-iteration-count: infinite;
-    //     }
-    //   }
-    //   @media (max-width: 420px) {
-    //     margin-top: 0rem;
-    //   }
-    //   @media (max-width: 620px) {
-    //     margin-top: 0rem;
-    //   }
-    // }
-    //
-    // @keyframes scroll {
-    //   0% { opacity: 0; }
-    //   10% { transform: translateY(0); opacity: 1; }
-    //   100% { transform: translateY(15px); opacity: 0;}
-    // }
-
   }
+
+  /* ==========================
+      SECTION HOME - LEFT PART
+     ========================== */
+
   .logo {
     height: 800px;
     background-repeat: no-repeat;
@@ -172,6 +89,10 @@ PROJECTS
     background-size: 45% 45%;
     background-position: center;
     background-image: url(../images/logo_engarde.svg);
+    @media (max-width: 420px) {
+      height: 400px;
+
+    }
 
     .text {
       display: flex;
@@ -182,7 +103,9 @@ PROJECTS
         line-height: 80rem;
         text-decoration: none;
         list-style-type: none;
-
+        @media (max-width: 420px) {
+          padding-top: 13rem;
+        }
       }
     }
     @media all and (max-width: 420px) {
@@ -190,57 +113,75 @@ PROJECTS
 
     }
   }
-  .experience {
+}
+
+  /* ================================
+      SECTION EXPERIENCE - RIGHT PART
+     ================================ */
+
+  section.experience_page {
     display: flex;
-    background-color: #7f8a9b;
-    height: 800px;
-    text-transform: uppercase;
+    flex-wrap: wrap;
+    flex-basis: 100%;
 
-    ul {
-      margin-top: 10rem;
-      list-style-type: square;
-      padding: 2rem;
-
-      a {
-        @include links(#E8E8E8, #E8E8E8, yellow, $font-color);
-        text-decoration: none;
-      }
-    }
-    @media all and (max-width: 420px) {
+    div.experience {
       display: flex;
-      ul {
-        padding: 3rem;
-        margin-top: 5rem;
-        list-style-type: square;
-      }
-    }
-    @media all and (max-width: 620px) {
-      display: flex;
-      ul {
-        padding: 4rem;
-        margin-top: 5rem;
-        list-style-type: square;
-      }
-    }
-  }
-  .skill {
-    display: flex;
-    background-color: #7f8a9b;
-    height: 800px;
-    text-transform: uppercase;
-
-    ul {
-      margin-top: 10rem;
-      list-style-type: square;
-      padding: 2rem;
-    }
-    @media all and (max-width: 420px) {
-      height: 400px;
+      background-color: #7f8a9b;
+      height: 800px;
+      text-transform: uppercase;
 
       ul {
         list-style-type: square;
-        margin-top: 5rem;
         padding: 2rem;
+
+        a {
+          @include links(#E8E8E8, #E8E8E8, yellow, $font-color);
+          text-decoration: none;
+        }
+      }
+
+
+      @media all and (max-width: 420px) {
+        display: flex;
+        ul {
+          padding: 3rem;
+          margin-top: 5rem;
+          list-style-type: square;
+        }
+      }
+      @media all and (max-width: 620px) {
+        display: flex;
+        ul {
+          padding: 4rem;
+          margin-top: 5rem;
+          list-style-type: square;
+
+        }
+      }
+    }
+
+    /* ================================
+        SECTION EXPERIENCE - LEFT PART
+       ================================ */
+
+    .skill {
+      display: flex;
+      background-color: #7f8a9b;
+      height: 800px;
+      text-transform: uppercase;
+
+      ul {
+        list-style-type: square;
+        padding: 2rem;
+      }
+      @media all and (max-width: 420px) {
+        height: 400px;
+
+        ul {
+          list-style-type: square;
+          margin-top: 5rem;
+          padding: 2rem;
+        }
       }
     }
   }
@@ -248,7 +189,7 @@ PROJECTS
   div {
     margin: 0.5px;
     flex-grow: 1;
-    // align-items: center;
+    align-items: center;
     justify-content: center;
     font-size: 0.75rem;
     color: #fff;
@@ -259,18 +200,72 @@ PROJECTS
     }
 
     &:nth-child(2) {
-      flex: 0 0 calc(30%-1px);
+      flex: 0 0 calc(30%);
     }
-    @media all and (max-width: 420px) {
+    @media all and (max-width: 768px) {
       &:first-child {
-        flex: 0 0 calc(100% - 1px);
+        flex: 0 0 calc(100%);
         order: 1;
       }
 
       &:nth-child(2) {
-        flex: 0 0 calc(100% - 1px);
+        flex: 0 0 calc(100%);
+        order: 1;
+      }
+    }
+    @include tablet {
+      &:first-child {
+        flex: 0 0 calc(100%);
+        order: 1;
+      }
+
+      &:nth-child(2) {
+        flex: 0 0 calc(100%);
         order: 1;
       }
     }
   }
-}
+
+/* ==================
+MOUSE SCROLL ICON
+===================== */
+// .scroll-downs {
+//   display: flex;
+//   margin: auto;
+//   margin-top: 5rem;
+//   width :10px;
+//   height: 55px;
+//
+//   .mousey {
+//     width: 3px;
+//     padding: 10px 15px;
+//     height: 35px;
+//     border: 2px solid #fff;
+//     border-radius: 25px;
+//     opacity: 0.75;
+//     box-sizing: content-box;
+//
+//     .scroller {
+//       width: 3px;
+//       height: 10px;
+//       border-radius: 25%;
+//       background-color: #fff;
+//       animation-name: scroll;
+//       animation-duration: 2.2s;
+//       animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+//       animation-iteration-count: infinite;
+//     }
+//   }
+//   @media (max-width: 420px) {
+//     margin-top: 0rem;
+//   }
+//   @media (max-width: 620px) {
+//     margin-top: 0rem;
+//   }
+// }
+//
+// @keyframes scroll {
+//   0% { opacity: 0; }
+//   10% { transform: translateY(0); opacity: 1; }
+//   100% { transform: translateY(15px); opacity: 0;}
+// }
