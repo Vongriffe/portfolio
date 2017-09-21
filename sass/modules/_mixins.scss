@@ -77,3 +77,32 @@
         }
     }
 }
+
+@mixin button ($focus, $visited, $hover, $active) {
+    & {
+        color: $focus;
+        border: 1px solid $focus;
+        border-radius: 3px;
+        padding: 1rem 3rem;
+
+        &:visited {
+            color: $visited;
+            border-color: $visited;
+            background: transparent;
+            border-radius: 3px;
+        }
+        &:hover {
+            color: $active;
+            background-color: $hover;
+            border: 1px solid $hover;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+        &:active, &:focus {
+            color: $active;
+
+        }
+    }
+}

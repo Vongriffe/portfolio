@@ -96,8 +96,10 @@ SECTION HOME - RIGHT PART
 
       a {
         flex-direction: column;
-        @include links($font-color, $font-color, yellow, $font-color);
-        line-height: 80rem;
+        // @mixin button ($focus, $visited, $hover, $active)
+        @include button($font-color, $font-color, $font-color, $additional-color);
+
+        margin-top: 40rem;
         text-decoration: none;
         list-style-type: none;
         @media (max-width: 420px) {
