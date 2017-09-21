@@ -17,8 +17,8 @@ body {
 }
 
 /* ===========================
-    SECTION HOME - RIGHT PART
-   =========================== */
+SECTION HOME - RIGHT PART
+=========================== */
 
 .projects_page {
   display: flex;
@@ -46,14 +46,11 @@ body {
 
         @media (max-width: 720px) {
           font-size: 3rem;
-          // text-align: right;
           margin-right:1rem;
         }
         @media (max-width: 420px) {
-          // font-size: 2rem;
           margin-left: 1rem;
           margin-right:1rem;
-          // text-align: right;
         }
       }
     }
@@ -79,8 +76,8 @@ body {
   }
 
   /* ==========================
-      SECTION HOME - LEFT PART
-     ========================== */
+  SECTION HOME - LEFT PART
+  ========================== */
 
   .logo {
     height: 800px;
@@ -115,116 +112,116 @@ body {
   }
 }
 
-  /* ================================
-      SECTION EXPERIENCE - RIGHT PART
-     ================================ */
+/* ================================
+SECTION EXPERIENCE - RIGHT PART
+================================ */
 
-  section.experience_page {
+section.experience_page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+
+  div.experience {
     display: flex;
-    flex-wrap: wrap;
-    flex-basis: 100%;
+    background-color: #7f8a9b;
+    height: 800px;
+    text-transform: uppercase;
 
-    div.experience {
-      display: flex;
-      background-color: #7f8a9b;
-      height: 800px;
-      text-transform: uppercase;
+    ul {
+      list-style-type: square;
+      padding: 2rem;
 
-      ul {
-        list-style-type: square;
-        padding: 2rem;
-
-        a {
-          @include links(#E8E8E8, #E8E8E8, yellow, $font-color);
-          text-decoration: none;
-        }
-      }
-
-
-      @media all and (max-width: 420px) {
-        display: flex;
-        ul {
-          padding: 3rem;
-          margin-top: 5rem;
-          list-style-type: square;
-        }
-      }
-      @media all and (max-width: 620px) {
-        display: flex;
-        ul {
-          padding: 4rem;
-          margin-top: 5rem;
-          list-style-type: square;
-
-        }
+      a {
+        @include links(#E8E8E8, #E8E8E8, yellow, $font-color);
+        text-decoration: none;
       }
     }
 
-    /* ================================
-        SECTION EXPERIENCE - LEFT PART
-       ================================ */
 
-    .skill {
+    @media all and (max-width: 420px) {
       display: flex;
-      background-color: #7f8a9b;
-      height: 800px;
-      text-transform: uppercase;
-
       ul {
+        padding: 3rem;
+        margin-top: 5rem;
         list-style-type: square;
-        padding: 2rem;
       }
-      @media all and (max-width: 420px) {
-        height: 400px;
+    }
+    @media all and (max-width: 620px) {
+      display: flex;
+      ul {
+        padding: 4rem;
+        margin-top: 5rem;
+        list-style-type: square;
 
-        ul {
-          list-style-type: square;
-          margin-top: 5rem;
-          padding: 2rem;
-        }
       }
     }
   }
 
-  div {
-    margin: 0.5px;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    color: #fff;
-    order: 1;
+  /* ================================
+  SECTION EXPERIENCE - LEFT PART
+  ================================ */
 
+  .skill {
+    display: flex;
+    background-color: #7f8a9b;
+    height: 800px;
+    text-transform: uppercase;
+
+    ul {
+      list-style-type: square;
+      padding: 2rem;
+    }
+    @media all and (max-width: 420px) {
+      height: 400px;
+
+      ul {
+        list-style-type: square;
+        margin-top: 5rem;
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+div {
+  margin: 0.5px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #fff;
+  order: 1;
+
+  &:first-child {
+    flex: 0 0 calc(68.9%);
+  }
+
+  &:nth-child(2) {
+    flex: 0 0 calc(30%);
+  }
+  @media all and (max-width: 768px) {
     &:first-child {
-      flex: 0 0 calc(68.9%);
+      flex: 0 0 calc(100%);
+      order: 1;
     }
 
     &:nth-child(2) {
-      flex: 0 0 calc(30%);
-    }
-    @media all and (max-width: 768px) {
-      &:first-child {
-        flex: 0 0 calc(100%);
-        order: 1;
-      }
-
-      &:nth-child(2) {
-        flex: 0 0 calc(100%);
-        order: 1;
-      }
-    }
-    @include tablet {
-      &:first-child {
-        flex: 0 0 calc(100%);
-        order: 1;
-      }
-
-      &:nth-child(2) {
-        flex: 0 0 calc(100%);
-        order: 1;
-      }
+      flex: 0 0 calc(100%);
+      order: 1;
     }
   }
+  @include tablet {
+    &:first-child {
+      flex: 0 0 calc(100%);
+      order: 1;
+    }
+
+    &:nth-child(2) {
+      flex: 0 0 calc(100%);
+      order: 1;
+    }
+  }
+}
 
 /* ==================
 MOUSE SCROLL ICON
